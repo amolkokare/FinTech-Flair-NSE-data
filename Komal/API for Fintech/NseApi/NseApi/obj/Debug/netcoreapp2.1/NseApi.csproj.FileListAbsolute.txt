@@ -1,0 +1,14 @@
+C:\Users\Admin\source\repos\NseApi\NseApi\bin\Debug\netcoreapp2.1\NseApi.deps.json
+C:\Users\Admin\source\repos\NseApi\NseApi\bin\Debug\netcoreapp2.1\NseApi.runtimeconfig.json
+C:\Users\Admin\source\repos\NseApi\NseApi\bin\Debug\netcoreapp2.1\NseApi.runtimeconfig.dev.json
+C:\Users\Admin\source\repos\NseApi\NseApi\bin\Debug\netcoreapp2.1\NseApi.dll
+C:\Users\Admin\source\repos\NseApi\NseApi\obj\Debug\netcoreapp2.1\NseApi.csprojAssemblyReference.cache
+C:\Users\Admin\source\repos\NseApi\NseApi\obj\Debug\netcoreapp2.1\NseApi.csproj.CoreCompileInputs.cache
+C:\Users\Admin\source\repos\NseApi\NseApi\obj\Debug\netcoreapp2.1\NseApi.RazorAssemblyInfo.cache
+C:\Users\Admin\source\repos\NseApi\NseApi\obj\Debug\netcoreapp2.1\NseApi.RazorAssemblyInfo.cs
+C:\Users\Admin\source\repos\NseApi\NseApi\obj\Debug\netcoreapp2.1\NseApi.AssemblyInfoInputs.cache
+C:\Users\Admin\source\repos\NseApi\NseApi\obj\Debug\netcoreapp2.1\NseApi.AssemblyInfo.cs
+C:\Users\Admin\source\repos\NseApi\NseApi\obj\Debug\netcoreapp2.1\NseApi.RazorTargetAssemblyInfo.cache
+C:\Users\Admin\source\repos\NseApi\NseApi\bin\Debug\netcoreapp2.1\NseApi.pdb
+C:\Users\Admin\source\repos\NseApi\NseApi\obj\Debug\netcoreapp2.1\NseApi.dll
+C:\Users\Admin\source\repos\NseApi\NseApi\obj\Debug\netcoreapp2.1\NseApi.pdb
