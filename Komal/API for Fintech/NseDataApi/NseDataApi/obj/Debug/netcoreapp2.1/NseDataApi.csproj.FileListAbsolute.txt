@@ -1,0 +1,14 @@
+C:\Users\Admin\source\repos\NseDataApi\NseDataApi\bin\Debug\netcoreapp2.1\NseDataApi.deps.json
+C:\Users\Admin\source\repos\NseDataApi\NseDataApi\bin\Debug\netcoreapp2.1\NseDataApi.runtimeconfig.json
+C:\Users\Admin\source\repos\NseDataApi\NseDataApi\bin\Debug\netcoreapp2.1\NseDataApi.runtimeconfig.dev.json
+C:\Users\Admin\source\repos\NseDataApi\NseDataApi\bin\Debug\netcoreapp2.1\NseDataApi.dll
+C:\Users\Admin\source\repos\NseDataApi\NseDataApi\obj\Debug\netcoreapp2.1\NseDataApi.csprojAssemblyReference.cache
+C:\Users\Admin\source\repos\NseDataApi\NseDataApi\obj\Debug\netcoreapp2.1\NseDataApi.csproj.CoreCompileInputs.cache
+C:\Users\Admin\source\repos\NseDataApi\NseDataApi\obj\Debug\netcoreapp2.1\NseDataApi.RazorAssemblyInfo.cache
+C:\Users\Admin\source\repos\NseDataApi\NseDataApi\obj\Debug\netcoreapp2.1\NseDataApi.RazorAssemblyInfo.cs
+C:\Users\Admin\source\repos\NseDataApi\NseDataApi\obj\Debug\netcoreapp2.1\NseDataApi.AssemblyInfoInputs.cache
+C:\Users\Admin\source\repos\NseDataApi\NseDataApi\obj\Debug\netcoreapp2.1\NseDataApi.AssemblyInfo.cs
+C:\Users\Admin\source\repos\NseDataApi\NseDataApi\obj\Debug\netcoreapp2.1\NseDataApi.RazorTargetAssemblyInfo.cache
+C:\Users\Admin\source\repos\NseDataApi\NseDataApi\bin\Debug\netcoreapp2.1\NseDataApi.pdb
+C:\Users\Admin\source\repos\NseDataApi\NseDataApi\obj\Debug\netcoreapp2.1\NseDataApi.dll
+C:\Users\Admin\source\repos\NseDataApi\NseDataApi\obj\Debug\netcoreapp2.1\NseDataApi.pdb
