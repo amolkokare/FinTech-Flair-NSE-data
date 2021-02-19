@@ -41,7 +41,7 @@ for item in range(1,1910):
 
 
 
-"""while True:
+while True:
       try:
           print(f'Dictionary length: {len(x)}')
           item = x.pop()
@@ -74,7 +74,8 @@ data['sma50']=data['CLOSE'].rolling(window=50).mean()
 testdata=(data[['SYMBOL','SERIES','TIMESTAMP','CLOSE','sma05','sma10','sma15','sma15','sma20','sma50']])
 
 rec=testdata.to_dict("records")
- #print(rec)
+ print(rec)
 testdata.to_csv("final1121699.csv")
-mycol1.insert_many(rec)"""
+mycol1.insert_many(rec)
 
+  
