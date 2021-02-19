@@ -3,7 +3,7 @@ import pandas as pd
 import pymongo
 import json
 import numpy as np
-import pandas_ta as ta
+#import pandas_ta as ta
 from bson import json_util, ObjectId
 from bson.json_util import loads
 from datetime import datetime, timedelta,date
@@ -11,10 +11,10 @@ myclient = pymongo.MongoClient("mongodb://localhost:27017/")
 
 dict=[]
 dict1=[]
-mydb = myclient["NSEDATA2020FinalDataCopy"]
-mycol = mydb["BHAVCOPY1"]
-mydb=myclient["NSEDATA_ANALYSIS"]
-mycol1=mydb["ALLStockDataCalulation"]
+mydb = myclient["NSEDATA"]
+mycol = mydb["BHAVCOPY"]
+mydb=myclient["NSEDATA_ANALYSIS_SMA"]
+mycol1=mydb["Sma_strategy_final"]
 
 
 
@@ -33,23 +33,24 @@ for item in range(1,1910):
     data['sma15'] = data['CLOSE'].rolling(window=15).mean()
     data['sma20'] = data['CLOSE'].rolling(window=20).mean()
     data['sma50'] = data['CLOSE'].rolling(window=50).mean()
+    data['sma200'] = data['CLOSE'].rolling(window=200).mean()
     #its calculate 52weekhigh,low,volume change,average volume,away from 52weekhigh,low
-    data['52WeekHigh'] = data['CLOSE'].rolling(265).max()
-    data['52WeekLow'] = data['CLOSE'].rolling(265).min()
+    data['52WeekHigh'] = data['HIGH'].rolling(265).max()
+    data['52WeekLow'] = data['LOW'].rolling(265).min()
     data['Volume_changein_20Days']=data['TOTTRDVAL'].rolling(window=20).mean()
-    data['Average volume'] = data['TOTTRDVAL']/data['Volume_changein_20Days']
-    high_52Week=data['52WeekHigh'].values[265]
+    data['Relative_Volume'] = data['TOTTRDVAL']/data['Volume_changein_20Days']
+    high_52Week=data['52WeekHigh'].max()
 
-    data["Away_From_52WeekHigh"]=(1-(data["CLOSE"])/high_52Week)*100
+    data["Away_From_52WeekHigh"]=(1-(data["HIGH"])/high_52Week)*100
 
-    low_52Week = data['52WeekLow'].values[265]
+    low_52Week = data['52WeekLow'].min()
 
-    data["Away_From_52WeekLow"] = (data["CLOSE"] / low_52Week-1)*100
+    data["Away_From_52WeekLow"] = (data["LOW"] / low_52Week-1)*100
 
     data['Percent_of_Price_Change5_days'] = data['CLOSE'].pct_change(periods=5)
 
-    testdata =data[['SYMBOL','TIMESTAMP','CLOSE','TOTTRDVAL','sma05','sma10','sma15','sma20','sma50','Percent_of_Price_Change5_days','Volume_changein_20Days','Average volume','52WeekHigh','52WeekLow','Away_From_52WeekHigh','Away_From_52WeekLow']]
-    testdata.to_csv("AllOperationinStockData.csv")
+    testdata =data[['SYMBOL','TIMESTAMP','CLOSE','HIGH','LOW','TOTTRDVAL','sma05','sma10','sma15','sma20','sma50','sma200','Percent_of_Price_Change5_days','Volume_changein_20Days','Relative_Volume','52WeekHigh','52WeekLow','Away_From_52WeekHigh','Away_From_52WeekLow']]
+    testdata.to_csv("AllOperationinStockData3.csv")
     print(testdata)
 
 
