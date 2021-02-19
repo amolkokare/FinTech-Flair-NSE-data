@@ -9,10 +9,10 @@ import pathlib
 import numpy
 from  pathlib import Path
 
-os.chdir(r"D:\NSEDATA\2021")
+os.chdir(r"D:\FinTech\NSE Historical Data\2020\j    uly")
 myclient = pymongo.MongoClient("mongodb://localhost:27017/")
-mydb = myclient["NSEDATA2020FinalDataCopy"]
-mycol = mydb["BHAVCOPY1"]
+mydb = myclient["NSEDATA"]
+mycol = mydb["BHAVCOPY"]
 filelist=glob.glob("*.csv")
 dflist=[]
 
@@ -29,7 +29,7 @@ import shutil, os
 
 for f in filelist :
 
-    newpath=r"D:\\NSEPROCESSDATA\\2021"
+    newpath=r"D:\FinTech\NSE Processed Data\2020"
     shutil.move(f, newpath)
 
     if not os.path.exists(newpath):
