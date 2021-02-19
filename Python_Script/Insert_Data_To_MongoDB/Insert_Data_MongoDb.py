@@ -9,7 +9,7 @@ import pathlib
 import numpy
 from  pathlib import Path
 
-os.chdir(r"D:\FinTech\NSE Historical Data\2020\j    uly")
+os.chdir(r"D:\FinTech\NSE Historical Data\2020\july")
 myclient = pymongo.MongoClient("mongodb://localhost:27017/")
 mydb = myclient["NSEDATA"]
 mycol = mydb["BHAVCOPY"]
