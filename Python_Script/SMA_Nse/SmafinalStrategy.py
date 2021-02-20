@@ -35,21 +35,21 @@ for item in range(1,1910):
     data['sma50'] = data['CLOSE'].rolling(window=50).mean()
     data['sma200'] = data['CLOSE'].rolling(window=200).mean()
     #its calculate 52weekhigh,low,volume change,average volume,away from 52weekhigh,low
-    data['52WeekHigh'] = data['HIGH'].rolling(265).max()
-    data['52WeekLow'] = data['LOW'].rolling(265).min()
-    data['Volume_changein_20Days']=data['TOTTRDVAL'].rolling(window=20).mean()
-    data['Relative_Volume'] = data['TOTTRDVAL']/data['Volume_changein_20Days']
-    high_52Week=data['52WeekHigh'].max()
+    data['WeekHigh52'] = data['CLOSE'].rolling(265).max()
+    data['WeekLow52'] = data['CLOSE'].rolling(265).min()
+    data['Avg_Vol_20day']=data['TOTTRDQTY'].rolling(window=20).mean()
+    data['Relative_Volume'] = data['TOTTRDQTY']/data['Avg_Vol_20day']
+    high_52Week=data['WeekHigh52'].max()
 
-    data["Away_From_52WeekHigh"]=(1-(data["HIGH"])/high_52Week)*100
+    data["Away_52WeekHigh"]=(1-(data["CLOSE"])/high_52Week)*100
 
-    low_52Week = data['52WeekLow'].min()
+    low_52Week = data['WeekLow52'].min()
 
-    data["Away_From_52WeekLow"] = (data["LOW"] / low_52Week-1)*100
+    data["Away_52WeekLow"] = (data["CLOSE"] / low_52Week-1)*100
 
-    data['Percent_of_Price_Change5_days'] = data['CLOSE'].pct_change(periods=5)
+    data['Avg_Price_5days'] = data['CLOSE'].pct_change(periods=5)
 
-    testdata =data[['SYMBOL','TIMESTAMP','CLOSE','HIGH','LOW','TOTTRDVAL','sma05','sma10','sma15','sma20','sma50','sma200','Percent_of_Price_Change5_days','Volume_changein_20Days','Relative_Volume','52WeekHigh','52WeekLow','Away_From_52WeekHigh','Away_From_52WeekLow']]
+    testdata =data[['SYMBOL','TIMESTAMP','OPEN','CLOSE','HIGH','LOW','TOTTRDQTY','sma05','sma10','sma15','sma20','sma50','sma200','Avg_Price_5days','Avg_Vol_20day','Relative_Volume','WeekHigh52','WeekLow52','Away_52WeekHigh','Away_52WeekLow']]
     testdata.to_csv("AllOperationinStockData3.csv")
     print(testdata)
 
