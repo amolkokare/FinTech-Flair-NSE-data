@@ -15,18 +15,21 @@ namespace APIConsume.Models
 
         public string SYMBOL { get; set; }
 
-        public string SERIES { get; set; }
+         public string SERIES { get; set; }
+
         public string TIMESTAMP { get; set; }
+
+        public string CLOSE { get; set; }
 
         //public double OPEN { get; set; }
 
-        public double CLOSE { get; set; }
+        
 
-        //public double HIGH { get; set; }
+        public double HIGH { get; set; }
 
-       // public double LOW { get; set; }
+        public double LOW { get; set; }
 
-        //public double TOTTRDQTY { get; set; }
+        public double Volume { get; set; }
 
         public double sma05 { get; set; }
 
@@ -38,21 +41,24 @@ namespace APIConsume.Models
 
         public double sma50 { get; set; }
 
-        //public double sma200 { get; set; }
+        public double sma200 { get; set; }
 
-        //public double Avg_Price_5days { get; set; }
+        public double Percent_of_Price_Change5_days { get; set; }
 
-       // public double Avg_Vol_20day { get; set; }
+         public double Volume_changein_20Days { get; set; }
 
-        //public double Relative_Volume { get; set; }
+        public double Relative_Volume { get; set; }
 
-       // public double WeekHigh52 { get; set; }
+         public double WeekHigh52 { get; set; }
 
-        //public double WeekLow52 { get; set; }
+        public double WeekLow52 { get; set; }
 
-        //public double Away_52WeekHigh { get; set; }
+        public double Away_From_52WeekHigh { get; set; }
 
-        //public double Away_52WeekLow { get; set; }
+        public double Away_From_52WeekLow { get; set; }
 
+        public Nse Nse { get; set; }
+
+        
     }
 }

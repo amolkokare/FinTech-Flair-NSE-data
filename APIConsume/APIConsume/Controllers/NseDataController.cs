@@ -30,16 +30,18 @@ namespace APIConsume.Controllers
         [HttpPost]
         public ActionResult Index(string searchValue)
         {
-            var data = _nseDataServices.Search(searchValue);
-            return View(_nseDataServices.Search(searchValue));
+           
+                var data = _nseDataServices.Search(searchValue);
+                return View(_nseDataServices.Search(searchValue));
+           
         }
 
-        [HttpPost]
-        public ActionResult Index1(string searchValue)
+        /*[HttpPost]
+        public ActionResult Index(string searchValue)
         {
-            var data = _nseDataServices.SearchSymbol(searchValue);
-            return View(_nseDataServices.SearchSymbol(searchValue));
-        }
+            var data = _nseDataServices.SearchTime(searchValue);
+            return View(_nseDataServices.SearchTime(searchValue));
+        }*/
 
 
 

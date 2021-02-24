@@ -35,6 +35,8 @@ namespace APIConsume
                 sp.GetRequiredService<IOptions<NseDatabaseSetting>>().Value);
 
             services.AddSingleton<NseDataServices>();
+
+            services.AddScoped<NseService>();
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
             services.Configure<CookiePolicyOptions>(options =>

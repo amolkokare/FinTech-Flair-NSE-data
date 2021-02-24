@@ -10,6 +10,7 @@ namespace APIConsume.Services
     public class NseDataServices
     {
         private readonly IMongoCollection<SMAT> _sma;
+       
         public NseDataServices(INseDatabaseSetting settings)
         {
             var client = new MongoClient(settings.ConnectionString);
@@ -36,19 +37,18 @@ namespace APIConsume.Services
             return _sma.Find(SMAT=> true).ToList();
         }
 
+        public List<SMAT> Search(string SearchSYMBOL)
+        {
+           return _sma.Find(SMAT => SMAT.SYMBOL == SearchSYMBOL).ToList();
+        }
 
-        public List<SMAT> Search(string SearchTimeStamp)
+        /*public List<SMAT> SearchTime(string SearchTimeStamp)
         {
             return _sma.Find(SMAT => SMAT.TIMESTAMP == SearchTimeStamp).ToList();
-        }
-
-        public List<SMAT> SearchSymbol(string SearchSYMBOL)
-        {
-            return _sma.Find(SMAT => SMAT.SYMBOL == SearchSYMBOL).ToList();
-        }
+        }*/
 
     }
 }
 
-    
+
 
