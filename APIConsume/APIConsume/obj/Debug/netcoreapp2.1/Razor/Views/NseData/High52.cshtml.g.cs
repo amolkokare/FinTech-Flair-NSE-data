@@ -63,7 +63,7 @@ using APIConsume.Models;
             WriteLiteral("\r\n<h2>High52</h2>\r\n");
             EndContext();
             BeginContext(107, 46, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a0e0aa176ceb4c8bbf66140db1394bd6", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "30a4c242e1c54d23a99b21ede6769c34", async() => {
                 BeginContext(129, 20, true);
                 WriteLiteral(" Back TO ALL Records");
                 EndContext();

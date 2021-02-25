@@ -10,11 +10,11 @@
         "projectUniqueName": "D:\\Github\\FinTech-Flair-NSE-data\\APIConsume\\APIConsume\\APIConsume.csproj",
         "projectName": "APIConsume",
         "projectPath": "D:\\Github\\FinTech-Flair-NSE-data\\APIConsume\\APIConsume\\APIConsume.csproj",
-        "packagesPath": "C:\\Users\\ADMIN\\.nuget\\packages\\",
+        "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
         "outputPath": "D:\\Github\\FinTech-Flair-NSE-data\\APIConsume\\APIConsume\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\ADMIN\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

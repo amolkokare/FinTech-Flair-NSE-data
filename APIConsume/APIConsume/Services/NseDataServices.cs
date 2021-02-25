@@ -52,23 +52,27 @@ namespace APIConsume.Services
         {
             DateTime maxDate = getMaxDate();
             List<SMAT> slist = new List<SMAT>();
+
             
                 var cd = Get().ToList();
                 string g = maxDate.ToString();
                 var f = g.Split(" ");
                 foreach (var item in cd)
                 {
+                var a = 0;
+                var c = item.CLOSE;
+                var b = item.Away_From_52WeekHigh;
                     string d = item.TIMESTAMP.ToString();
 
-                    if (d.Contains(f[0]))
+                    if (c > 1300 && d.Contains(f[0]) && b.Equals(a))
                     {
                         slist.Add(item);
                     }
+                  
                 }
 
                 return slist;
-        
-
+            
             
            
 
@@ -86,7 +90,10 @@ namespace APIConsume.Services
 
         public List<SMAT> Week52(double searchhigh)
         {
-            var y = _sma.Find(g => g.Away_From_52WeekHigh == searchhigh).ToList();
+           
+
+
+            var y = _sma.Find(g => g.Away_From_52WeekHigh == searchhigh ).ToList();
 
             return y;
         }

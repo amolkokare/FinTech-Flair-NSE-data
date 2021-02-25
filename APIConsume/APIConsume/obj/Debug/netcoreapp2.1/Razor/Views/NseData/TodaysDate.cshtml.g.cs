@@ -67,12 +67,12 @@ using APIConsume.Models;
             WriteLiteral("\r\n<h2>TodaysDate</h2>\r\n\r\n");
             EndContext();
             BeginContext(117, 249, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "66fdfb5a6d6444d0bc2eee195f1c9609", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3f51e7aa26684438b7eb8727cd648477", async() => {
                 BeginContext(157, 126, true);
                 WriteLiteral("\r\n    <div>\r\n        <p>\r\n\r\n\r\n            <input type=\"Submit\" name=\"searchHigh\" value=\"Away_From_52WeekHigh\" />\r\n            ");
                 EndContext();
                 BeginContext(283, 46, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "09eabe9d7fcb45a984ad345cd02b479a", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a03d3644b09d40aaba6344be2f740b78", async() => {
                     BeginContext(305, 20, true);
                     WriteLiteral(" Back TO ALL Records");
                     EndContext();
