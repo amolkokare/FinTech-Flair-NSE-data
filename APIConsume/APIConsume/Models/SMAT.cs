@@ -15,13 +15,13 @@ namespace APIConsume.Models
 
         public string SYMBOL { get; set; }
 
-         public string SERIES { get; set; }
+        
 
-        public string TIMESTAMP { get; set; }
+        public DateTime TIMESTAMP { get; set; }
 
-        public string CLOSE { get; set; }
+        public double CLOSE { get; set; }
 
-        //public double OPEN { get; set; }
+       
 
         
 
@@ -29,7 +29,7 @@ namespace APIConsume.Models
 
         public double LOW { get; set; }
 
-        public double Volume { get; set; }
+        public long Volume { get; set; }
 
         public double sma05 { get; set; }
 
@@ -43,7 +43,7 @@ namespace APIConsume.Models
 
         public double sma200 { get; set; }
 
-        public double Percent_of_Price_Change5_days { get; set; }
+        public double Percent_of_Price_Change5_days   { get; set; }
 
          public double Volume_changein_20Days { get; set; }
 

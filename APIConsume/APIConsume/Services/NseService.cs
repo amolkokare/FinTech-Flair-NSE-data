@@ -19,12 +19,12 @@ namespace APIConsume.Services
         {
             MongoClient client = new MongoClient(config.GetConnectionString("Watchlist"));
             IMongoDatabase database = client.GetDatabase("Watchlist");
-            _nse = database.GetCollection<Nse>("nse");
+            _nse = database.GetCollection<Nse>("sma");
         }
 
         public List<Nse> Get()
         {
-            return _nse.Find(ne => true).ToList();
+            return _nse.Find(SMAT => true).ToList();
         }
 
         public Nse Get(string id)

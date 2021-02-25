@@ -4,23 +4,38 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<h2>Index</h2>
+
 <form asp-action="Index" method="post">
     <div>
         <p>
 
-            
+
             Search SYMBOL: <input type="text" name="searchValue" value="" />
-            @*Search TIMESTAMP: <input type="text" name="searchValue" value="" />*@
-
-
-            <input type="Submit" value="Search" />
+            <input type="Submit"  value ="Search" />                     
+            <br />
             <a asp-action="Index"> Back TO ALL Records</a>
 
 
         </p>
     </div>
 </form>
+
+
+<form asp-action="TodaysDate" method="post">
+    <div>
+        <p>
+
+
+            <input type="Submit" name="scannerName" value="CurrentDate" />
+
+
+        </p>
+    </div>
+</form>
+
+
+
 <table class="table">
     <thead>
         <tr>
@@ -33,9 +48,6 @@
             <th>
                 @Html.DisplayNameFor(model => model.TIMESTAMP)
             </th>
-            @*<th>
-            @Html.DisplayNameFor(model => model.OPEN)
-        </th>*@
             <th>
                 @Html.DisplayNameFor(model => model.CLOSE)
             </th>
@@ -46,8 +58,8 @@
                 @Html.DisplayNameFor(model => model.LOW)
             </th>
             <th>
-            @Html.DisplayNameFor(model => model.Volume)
-        </th>
+                @Html.DisplayNameFor(model => model.Volume)
+            </th>
             <th>
                 @Html.DisplayNameFor(model => model.sma05)
             </th>
@@ -64,35 +76,34 @@
                 @Html.DisplayNameFor(model => model.sma50)
             </th>
             <th>
-            @Html.DisplayNameFor(model => model.sma200)
-        </th>
+                @Html.DisplayNameFor(model => model.sma200)
+            </th>
             <th>
-            @Html.DisplayNameFor(model => model.Percent_of_Price_Change5_days)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Volume_changein_20Days)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Relative_Volume)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.WeekHigh52)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.WeekLow52)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Away_From_52WeekHigh)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Away_From_52WeekLow)
-        </th>
-        <th></th>
+                @Html.DisplayNameFor(model => model.Percent_of_Price_Change5_days)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Volume_changein_20Days)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Relative_Volume)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.WeekHigh52)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.WeekLow52)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Away_From_52WeekHigh)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Away_From_52WeekLow)
+            </th>
+            <th></th>
         </tr>
     </thead>
     <tbody>
-        @foreach (var item in Model)
-        {
+@foreach (var item in Model) {
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.Id)
@@ -103,9 +114,6 @@
             <td>
                 @Html.DisplayFor(modelItem => item.TIMESTAMP)
             </td>
-            @*<td>
-                @Html.DisplayFor(modelItem => item.OPEN)
-            </td>*@
             <td>
                 @Html.DisplayFor(modelItem => item.CLOSE)
             </td>
@@ -118,7 +126,6 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Volume)
             </td>
-
             <td>
                 @Html.DisplayFor(modelItem => item.sma05)
             </td>
@@ -158,8 +165,12 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Away_From_52WeekLow)
             </td>
-
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>
         </tr>
-        }
+}
     </tbody>
 </table>

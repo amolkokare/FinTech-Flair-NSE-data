@@ -28,13 +28,42 @@ namespace APIConsume.Controllers
 
         
         [HttpPost]
-        public ActionResult Index(string searchValue)
+        public ActionResult Index(string searchValue)// 
         {
-           
-                var data = _nseDataServices.Search(searchValue);
-                return View(_nseDataServices.Search(searchValue));
-           
+
+            var data = _nseDataServices.Search(searchValue);
+           return View(data);
+
+            
+
+            
         }
+        [HttpPost]
+        public ActionResult TodaysDate(string scannerName= "high52week")
+        {
+
+            var data = _nseDataServices.searchdate(scannerName);
+
+            //return View(stockService.SearchDate(dateinput = System.DateTime.MaxValue));
+
+            return View(data);
+
+            //if (!double.IsNaN(searchValue))
+            //{
+            //    var data2 = stockService.SearchHigh(searchValue = 0);
+            //    return View(data2);
+            //}
+
+        }
+
+        [HttpPost]
+          public ActionResult High52(double searchHigh)
+        {
+            var output = _nseDataServices.Week52(searchHigh = 0);
+            return View(output);
+
+        }
+
 
         /*[HttpPost]
         public ActionResult Index(string searchValue)

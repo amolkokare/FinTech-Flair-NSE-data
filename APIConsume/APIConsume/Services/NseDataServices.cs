@@ -47,6 +47,51 @@ namespace APIConsume.Services
             return _sma.Find(SMAT => SMAT.TIMESTAMP == SearchTimeStamp).ToList();
         }*/
 
+
+        public List<SMAT> searchdate(string scannerName)
+        {
+            DateTime maxDate = getMaxDate();
+            List<SMAT> slist = new List<SMAT>();
+            
+                var cd = Get().ToList();
+                string g = maxDate.ToString();
+                var f = g.Split(" ");
+                foreach (var item in cd)
+                {
+                    string d = item.TIMESTAMP.ToString();
+
+                    if (d.Contains(f[0]))
+                    {
+                        slist.Add(item);
+                    }
+                }
+
+                return slist;
+        
+
+            
+           
+
+        }
+        public DateTime getMaxDate()
+        {
+
+            // return SM.Find(Stock => Stock.TIMESTAMP==SearchTodayDate).ToList();
+            var cd = Get();
+
+            var date = Convert.ToDateTime(cd.OrderByDescending(d => d.TIMESTAMP).Select(s => s.TIMESTAMP).First());// Convert.ToDateTime("2021-02-23T05:13:00.608Z");//max timestamp
+            return date;
+
+        }
+
+        public List<SMAT> Week52(double searchhigh)
+        {
+            var y = _sma.Find(g => g.Away_From_52WeekHigh == searchhigh).ToList();
+
+            return y;
+        }
+
+
     }
 }
 
