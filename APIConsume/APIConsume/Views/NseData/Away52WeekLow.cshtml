@@ -1,48 +1,10 @@
 ﻿@model IEnumerable<APIConsume.Models.SMAT>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Away52WeekLow";
 }
 
-<h2>Index</h2>
-
-<form asp-action="Index" method="post">
-    <div>
-        <p>
-
-            Search SYMBOL: <input type="text" name="searchValue" value="" />
-            <input type="Submit"  value ="Search" />                     
-            <br />
-            <a asp-action="Index"> Back TO ALL Records</a>
-
-        </p>
-    </div>
-</form>
-
-
-<form asp-action="Away52WeekHigh" method="post">
-    <div>
-        <p>
-            <input type="submit" name="scannerName" value="Away52WeekHigh" />
-        </p>
-    </div>
-</form>
-
-<form asp-action="Away52WeekLow" method="post">
-    <div>
-        <p>
-            <input type="submit" name="scannerName" value="Away52WeekLow" />
-        </p>
-    </div>
-</form>
-
-<form asp-action="Momentum" method="post">
-    <div>
-        <p>
-            <input type="submit" name="scannerName" value="Momentum" />
-        </p>
-    </div>
-</form>
+<h1>Away52WeekLow</h1>
 
 
 <table class="table">
@@ -174,11 +136,7 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Away_From_52WeekLow)
             </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
-            </td>
+            
         </tr>
 }
     </tbody>

@@ -77,5 +77,6 @@ D:\Github\FinTech-Flair-NSE-data\APIConsume\APIConsume\obj\Debug\netcoreapp2.1\A
 D:\Github\FinTech-Flair-NSE-data\APIConsume\APIConsume\obj\Debug\netcoreapp2.1\APIConsume.genruntimeconfig.cache
 D:\Github\FinTech-Flair-NSE-data\APIConsume\APIConsume\obj\Debug\netcoreapp2.1\APIConsume.csproj.CopyComplete
 D:\Github\FinTech-Flair-NSE-data\APIConsume\APIConsume\obj\Debug\netcoreapp2.1\Razor\Views\NseData\Index.cshtml.g.cs
-D:\Github\FinTech-Flair-NSE-data\APIConsume\APIConsume\obj\Debug\netcoreapp2.1\Razor\Views\NseData\TodaysDate.cshtml.g.cs
-D:\Github\FinTech-Flair-NSE-data\APIConsume\APIConsume\obj\Debug\netcoreapp2.1\Razor\Views\NseData\High52.cshtml.g.cs
+D:\Github\FinTech-Flair-NSE-data\APIConsume\APIConsume\obj\Debug\netcoreapp2.1\Razor\Views\NseData\Away52WeekHigh.cshtml.g.cs
+D:\Github\FinTech-Flair-NSE-data\APIConsume\APIConsume\obj\Debug\netcoreapp2.1\Razor\Views\NseData\Away52WeekLow.cshtml.g.cs
+D:\Github\FinTech-Flair-NSE-data\APIConsume\APIConsume\obj\Debug\netcoreapp2.1\Razor\Views\NseData\Momentum.cshtml.g.cs
