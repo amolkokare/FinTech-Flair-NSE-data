@@ -1,0 +1,154 @@
+﻿@model IEnumerable<APIConsume.Models.SMAT>
+
+@{
+    ViewData["Title"] = "TodaysDate";
+}
+
+<h2>TodaysDate</h2>
+
+<form asp-action="High52" method="post">
+    <div>
+        <p>
+
+
+            <input type="Submit" name="searchHigh" value="Away_From_52WeekHigh" />
+            <a asp-action="Index"> Back TO ALL Records</a>
+
+        </p>
+    </div>
+</form>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SYMBOL)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TIMESTAMP)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CLOSE)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HIGH)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LOW)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Volume)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.sma05)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.sma10)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.sma15)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.sma20)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.sma50)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.sma200)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Percent_of_Price_Change5_days)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Volume_changein_20Days)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Relative_Volume)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.WeekHigh52)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.WeekLow52)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Away_From_52WeekHigh)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Away_From_52WeekLow)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SYMBOL)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TIMESTAMP)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CLOSE)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HIGH)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LOW)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Volume)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.sma05)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.sma10)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.sma15)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.sma20)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.sma50)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.sma200)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Percent_of_Price_Change5_days)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Volume_changein_20Days)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Relative_Volume)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.WeekHigh52)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.WeekLow52)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Away_From_52WeekHigh)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Away_From_52WeekLow)
+            </td>
+            
+        </tr>
+}
+    </tbody>
+</table>
