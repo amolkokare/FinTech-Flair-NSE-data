@@ -3,16 +3,16 @@ import os
 import pandas as pd
 import  glob
 myclient = pymongo.MongoClient("mongodb://localhost:27017/")
-mydb = myclient["NSEDATA2020FinalDataCopy"] # Mongo-DB database name of historical data append
-mycol = mydb["BHAVCOPY1"]   # Mongo-DB Collection name of historical data append
+mydb = myclient["NSEDATA2020FinalDataCopy"] # change # Mongo-DB database name of historical data append
+mycol = mydb["BHAVCOPY1"]   # change # Mongo-DB Collection name of historical data append
 
-mydb=myclient["NSEDATA_ANALYSIS"]   # Mongo-DB database name of SMA Analysis
-mycol1=mydb["SMAAllSTOCKDATA"]  # Mongo-DB Collection name of SMA Analysis
-mycol2=mydb["SMABACKENDTESTING"]    # Mongo-DB New Collection name of backend testing buy and sale signal
+mydb=myclient["NSEDATA_ANALYSIS"]   # change # Mongo-DB database name of SMA Analysis
+mycol1=mydb["SMAAllSTOCKDATA"]  # change # Mongo-DB Collection name of SMA Analysis
+mycol2=mydb["SMABACKENDTESTING"]    # change # Mongo-DB New Collection name of backend testing buy and sale signal
 dict=[]
 x=list(mycol.find({},{"_id":0,"SYMBOL":1}).limit(1910))
 
-for item in range(0, 3):
+for item in range(1, 3):
     a = list(mycol1.find(x[item]))  # Get data for 1 stock, next round 2nd symbol
 
     data = pd.DataFrame.from_dict(a)
@@ -26,11 +26,9 @@ for item in range(0, 3):
     rec = testdata.to_dict("records")
     testdata.to_csv("datastock.csv")
     print(testdata)
-   # mycol2.insert_many(rec)
+    mycol2.insert_many(rec)
 
 
-#testdata.to_csv("cross11511511.csv")
 
-#print(testdata)"""
 
 
