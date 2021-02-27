@@ -46,6 +46,8 @@ namespace APIConsume.Services
 
         }
 
+        
+
         // It gives Max date with Away_52weekhigh,geater close and max Volume
         public List<SMAT> searchaway52weekhigh(string scannerName)
         {

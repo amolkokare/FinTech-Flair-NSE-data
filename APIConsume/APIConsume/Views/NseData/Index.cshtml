@@ -11,24 +11,25 @@
         <p>
 
             Search SYMBOL: <input type="text" name="searchValue" value="" />
-            <input type="Submit"  value ="Search" />                     
-            <br />
-            <a asp-action="Index"> Back TO ALL Records</a>
+            <input type="Submit" value="Search" />
+            Search Scanner: <input type="text" name="scannerName" value="" />
+            <input type="Submit" value="Search" /><br />
+            <a asp-action="Index"> Clear Filter</a>
 
         </p>
     </div>
 </form>
 
 
-<form asp-action="Away52WeekHigh" method="post">
+@*<form asp-action="Away52WeekHigh" method="post">
     <div>
         <p>
             <input type="submit" name="scannerName" value="Away52WeekHigh" />
         </p>
     </div>
-</form>
+</form>*@
 
-<form asp-action="Away52WeekLow" method="post">
+@*<form asp-action="Away52WeekLow" method="post">
     <div>
         <p>
             <input type="submit" name="scannerName" value="Away52WeekLow" />
@@ -42,7 +43,7 @@
             <input type="submit" name="scannerName" value="Momentum" />
         </p>
     </div>
-</form>
+</form>*@
 
 
 <table class="table">
