@@ -129,12 +129,12 @@ using APIConsume.Models;
             WriteLiteral("    </dl>\r\n    \r\n    ");
             EndContext();
             BeginContext(1083, 161, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "36d351f2278a4496bd2b193950f8b532", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "87c3f34d802d49d797d726470c5a7221", async() => {
                 BeginContext(1109, 84, true);
                 WriteLiteral("\r\n        <input type=\"submit\" value=\"Delete\" class=\"btn btn-default\" /> |\r\n        ");
                 EndContext();
                 BeginContext(1193, 38, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "491c4da33b614874b0c7b8556620f0ad", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "05db42d2b8b34eb485c7beed4b919ae3", async() => {
                     BeginContext(1215, 12, true);
                     WriteLiteral("Back to List");
                     EndContext();

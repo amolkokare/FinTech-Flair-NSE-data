@@ -1,23 +1,12 @@
 ﻿@model IEnumerable<APIConsume.Models.SMAT>
 
 @{
-    ViewData["Title"] = "TodaysDate";
+    ViewData["Title"] = "Momentum";
 }
 
-<h2>TodaysDate</h2>
+<h1>Momentum</h1>
 
-<form asp-action="High52" method="post">
-    <div>
-        <p>
-
-
-            <input type="Submit" name="searchHigh" value="Away_From_52WeekHigh" />
-            <a asp-action="Index"> Back TO ALL Records</a>
-
-        </p>
-    </div>
-</form>
-
+<a asp-action="Index"> Back TO ALL Records</a>
 <table class="table">
     <thead>
         <tr>

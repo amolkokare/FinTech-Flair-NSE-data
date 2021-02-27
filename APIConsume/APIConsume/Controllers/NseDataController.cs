@@ -20,58 +20,68 @@ namespace APIConsume.Controllers
             _nseDataServices = nseDataServices;
         }
 
-           public ActionResult Index()
+        // It gives whole data
+        public ActionResult Index()
+        {
+             return View(_nseDataServices.Get());
+        }
+
+
+        // It gives symbol that we want to search
+        [HttpPost]
+        public ActionResult Index(string searchValue, string scannerName)// 
+        {
+            if (scannerName == "HighWeek")
             {
-                return View(_nseDataServices.Get());
-            }
-
-
-        
-        [HttpPost]
-        public ActionResult Index(string searchValue)// 
-        {
-
-            var data = _nseDataServices.Search(searchValue);
-           return View(data);
-
-            
-
-            
-        }
-        [HttpPost]
-        public ActionResult TodaysDate(string scannerName)
-        {
-            
-                var data = _nseDataServices.searchdate(scannerName);
-
-                //return View(stockService.SearchDate(dateinput = System.DateTime.MaxValue));
-
+                var data = _nseDataServices.searchaway52weekhigh(scannerName);
                 return View(data);
-            
-            
+            }
+            else if(scannerName=="LowWeek")
+            {
+                var data = _nseDataServices.searchaway52weeklow(scannerName);
+                return View(data);
+                
+            }
+            else if(scannerName=="Momentum")
+            {
+                var data = _nseDataServices.Rel_Momentum(scannerName);
+                return View(data);
+            }
+            else
+            {
+                var data = _nseDataServices.Search(searchValue);
+                return View(data);
+            }
         }
-        
+
+
+        // It gives Max date with Away_52weekhigh,geater close and max Volume
+        //[HttpPost]
+        //public ActionResult Away52WeekHigh(string scannerName)
+        //{
             
+        //    var data = _nseDataServices.searchaway52weekhigh(scannerName);
+        //    return View(data);
+            
+        //}
 
-        
+        // It gives Max date with Away_52weeklow,geater close and max Volume
+        //[HttpPost]
+        //public ActionResult Away52WeekLow(string scannerName)
+        //{
+        //    var data = _nseDataServices.searchaway52weeklow(scannerName);
+        //    return View(data);
 
-        [HttpPost]
-          public ActionResult High52(double searchHigh)
-        {
-        var output = _nseDataServices.Week52(searchHigh = 0);
-        return View(output);
+        //}
 
-        }
+        // It gives Max date with Relative_Volume,geater close and max Volume
+        //[HttpPost]
+        //public ActionResult Momentum(string scannerName)
+        //{
+        //    var data = _nseDataServices.Rel_Momentum(scannerName);
+        //    return View(data);
 
-
-        /*[HttpPost]
-        public ActionResult Index(string searchValue)
-        {
-            var data = _nseDataServices.SearchTime(searchValue);
-            return View(_nseDataServices.SearchTime(searchValue));
-        }*/
-
-
+        //}
 
 
     }

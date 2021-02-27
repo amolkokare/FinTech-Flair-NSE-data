@@ -18,65 +18,23 @@ namespace APIConsume.Services
 
             _sma = database.GetCollection<SMAT>(settings.SMACollectionName);
         }
+
+
         
 
-        /*public List<SMAT> Get()
-        {
-            List<SMAT> smat;
-            smat = _sma.Find(sma => true).ToList();
-            return smat;
-        }*/
-
-
-        /*public SMAT Get(string id) =>
-           _sma.Find<SMAT>(sma => sma.Id == id).FirstOrDefault();*/
-
-
+        // It gives whole data
         public List<SMAT> Get()
         {
             return _sma.Find(SMAT=> true).ToList();
         }
 
+        // It gives symbol that we want to search
         public List<SMAT> Search(string SearchSYMBOL)
         {
            return _sma.Find(SMAT => SMAT.SYMBOL == SearchSYMBOL).ToList();
         }
 
-        /*public List<SMAT> SearchTime(string SearchTimeStamp)
-        {
-            return _sma.Find(SMAT => SMAT.TIMESTAMP == SearchTimeStamp).ToList();
-        }*/
-
-
-        public List<SMAT> searchdate(string scannerName)
-        {
-            DateTime maxDate = getMaxDate();
-            List<SMAT> slist = new List<SMAT>();
-
-            
-                var cd = Get().ToList();
-                string g = maxDate.ToString();
-                var f = g.Split(" ");
-                foreach (var item in cd)
-                {
-                var a = 0;
-                var c = item.CLOSE;
-                var b = item.Away_From_52WeekHigh;
-                    string d = item.TIMESTAMP.ToString();
-
-                    if (c > 1300 && d.Contains(f[0]) && b.Equals(a))
-                    {
-                        slist.Add(item);
-                    }
-                  
-                }
-
-                return slist;
-            
-            
-           
-
-        }
+        // It returns Max date
         public DateTime getMaxDate()
         {
 
@@ -88,16 +46,94 @@ namespace APIConsume.Services
 
         }
 
-        public List<SMAT> Week52(double searchhigh)
+        
+
+        // It gives Max date with Away_52weekhigh,geater close and max Volume
+        public List<SMAT> searchaway52weekhigh(string scannerName)
         {
-           
+            DateTime maxDate = getMaxDate();
+            List<SMAT> slist = new List<SMAT>();
 
+            
+                var cd = Get().ToList();
+                string g = maxDate.ToString();
+                var f = g.Split(" ");
+                foreach (var item in cd)
+                {
+                    var a = 0;
+                    var close = item.CLOSE;
+                    var Highweek = item.Away_From_52WeekHigh;
+                    var Vol = item.Volume;
+                    string times = item.TIMESTAMP.ToString();
+                    
 
-            var y = _sma.Find(g => g.Away_From_52WeekHigh == searchhigh ).ToList();
+                    if (Vol> 876213 && close > 500 && times.Contains(f[0]) && Highweek.Equals(a))
+                    {
+                        slist.Add(item);
+                    }
+                  
+                }
 
-            return y;
+                return slist;
         }
 
+        // It gives Max date with Away_52weeklow,geater close and max Volume
+        public List<SMAT> searchaway52weeklow(string scannerName)
+        {
+            DateTime maxDate = getMaxDate();
+            List<SMAT> slist = new List<SMAT>();
+
+
+            var cd = Get().ToList();
+            string g = maxDate.ToString();
+            var f = g.Split(" ");
+            foreach (var item in cd)
+            {
+                var a = 0;
+                var close = item.CLOSE;
+                var LowWeek = item.Away_From_52WeekLow;
+                var Vol = item.Volume;
+                string times = item.TIMESTAMP.ToString();
+
+
+                if (Vol > 876213 && close > 500 && times.Contains(f[0]) && LowWeek.Equals(a))
+                {
+                    slist.Add(item);
+                }
+
+            }
+
+            return slist;
+        }
+
+        // It gives Max date with greater Relatie_volume,geater close and max Volume
+        public List<SMAT> Rel_Momentum(string scannerName)
+        {
+            DateTime maxDate = getMaxDate();
+            List<SMAT> slist = new List<SMAT>();
+
+
+            var cd = Get().ToList();
+            string g = maxDate.ToString();
+            var f = g.Split(" ");
+            foreach (var item in cd)
+            {
+                
+                var close = item.CLOSE;
+                var RelVol = item.Relative_Volume;
+                var Vol = item.Volume;
+                string times = item.TIMESTAMP.ToString();
+
+
+                if (RelVol > 0.999735239 && Vol > 876213 && close > 500 && times.Contains(f[0]))
+                {
+                    slist.Add(item);
+                }
+
+            }
+
+            return slist;
+        }
 
     }
 }
