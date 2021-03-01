@@ -12,8 +12,18 @@
 
             Search SYMBOL: <input type="text" name="searchValue" value="" />
             <input type="Submit" value="Search" />
-            Search Scanner: <input type="text" name="scannerName" value="" />
+            @*Search Scanner: <input type="text" name="scannerName" value="" />
+            <input type="Submit" value="Search" /><br />*@
+            <select name="scannerName">
+                <option>None</option>
+                <option>HighWeek</option>
+                <option>LowWeek</option>
+                <option>Momentum</option>
+                <option>SortByDescending</option>
+                <option>SortByAscending</option>
+            </select>&nbsp;&nbsp;&nbsp;&nbsp;
             <input type="Submit" value="Search" /><br />
+            
             <a asp-action="Index"> Clear Filter</a>
 
         </p>
@@ -49,9 +59,9 @@
 <table class="table">
     <thead>
         <tr>
-            <th>
+            @*<th>
                 @Html.DisplayNameFor(model => model.Id)
-            </th>
+            </th>*@
             <th>
                 @Html.DisplayNameFor(model => model.SYMBOL)
             </th>
@@ -70,7 +80,7 @@
             <th>
                 @Html.DisplayNameFor(model => model.Volume)
             </th>
-            <th>
+            @*<th>
                 @Html.DisplayNameFor(model => model.sma05)
             </th>
             <th>
@@ -87,22 +97,22 @@
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.sma200)
-            </th>
+            </th>*@
             <th>
                 @Html.DisplayNameFor(model => model.Percent_of_Price_Change5_days)
             </th>
-            <th>
+            @*<th>
                 @Html.DisplayNameFor(model => model.Volume_changein_20Days)
-            </th>
+            </th>*@
             <th>
                 @Html.DisplayNameFor(model => model.Relative_Volume)
             </th>
-            <th>
+            @*<th>
                 @Html.DisplayNameFor(model => model.WeekHigh52)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.WeekLow52)
-            </th>
+            </th>*@
             <th>
                 @Html.DisplayNameFor(model => model.Away_From_52WeekHigh)
             </th>
@@ -115,9 +125,9 @@
     <tbody>
 @foreach (var item in Model) {
         <tr>
-            <td>
+            @*<td>
                 @Html.DisplayFor(modelItem => item.Id)
-            </td>
+            </td>*@
             <td>
                 @Html.DisplayFor(modelItem => item.SYMBOL)
             </td>
@@ -136,7 +146,7 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Volume)
             </td>
-            <td>
+            @*<td>
                 @Html.DisplayFor(modelItem => item.sma05)
             </td>
             <td>
@@ -153,22 +163,22 @@
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.sma200)
-            </td>
+            </td>*@
             <td>
                 @Html.DisplayFor(modelItem => item.Percent_of_Price_Change5_days)
             </td>
-            <td>
+            @*<td>
                 @Html.DisplayFor(modelItem => item.Volume_changein_20Days)
-            </td>
+            </td>*@
             <td>
                 @Html.DisplayFor(modelItem => item.Relative_Volume)
             </td>
-            <td>
+            @*<td>
                 @Html.DisplayFor(modelItem => item.WeekHigh52)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.WeekLow52)
-            </td>
+            </td>*@
             <td>
                 @Html.DisplayFor(modelItem => item.Away_From_52WeekHigh)
             </td>

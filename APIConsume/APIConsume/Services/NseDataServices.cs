@@ -34,6 +34,82 @@ namespace APIConsume.Services
            return _sma.Find(SMAT => SMAT.SYMBOL == SearchSYMBOL).ToList();
         }
 
+
+        // It gives Descending order of Percentage change
+        public List<SMAT> sort(string sc)
+        {
+            var cd = Get();
+            var vs = cd.OrderByDescending(d => d.Percent_of_Price_Change5_days).ToList();
+            return vs;
+        }
+
+        // It gives Descending order of Percentage change
+        public List<SMAT> Sort(string scannerName)
+        {
+            DateTime maxDate = getMaxDate();
+            List<SMAT> slist = new List<SMAT>();
+
+
+            var cd = Get().ToList();
+            string g = maxDate.ToString();
+            var f = g.Split(" ");
+            foreach (var item in cd)
+            {
+
+                var close = item.CLOSE;
+                var SortDesc = cd.OrderByDescending(s => s.Percent_of_Price_Change5_days).ToList();
+                var Vol = item.Volume;
+                string times = item.TIMESTAMP.ToString();
+
+
+                if (SortDesc != null && times.Contains(f[0]))
+                {
+                    slist.Add(item);
+                }
+
+            }
+
+            return slist;
+        }
+
+        // It gives Ascending order of Percentage change
+        public List<SMAT> sortA(string sc)
+        {
+            var cd = Get();
+            var vs = cd.OrderBy(d => d.Percent_of_Price_Change5_days).ToList();
+            return vs;
+        }
+
+        // It gives Ascending order of Percentage change
+        public List<SMAT> SortA(string scannerName)
+        {
+            DateTime maxDate = getMaxDate();
+            List<SMAT> slist = new List<SMAT>();
+
+
+            var cd = Get().ToList();
+            string g = maxDate.ToString();
+            var f = g.Split(" ");
+            foreach (var item in cd)
+            {
+
+                var close = item.CLOSE;
+                var SortAsc = cd.OrderBy(s => s.Percent_of_Price_Change5_days).ToList();
+                var Vol = item.Volume;
+                string times = item.TIMESTAMP.ToString();
+
+
+                if (times.Contains(f[0]) && SortAsc != null && Vol >= 1642481 && close > 1000)
+                {
+                    slist.Add(item);
+                }
+
+            }
+
+            return slist;
+        }
+
+
         // It returns Max date
         public DateTime getMaxDate()
         {

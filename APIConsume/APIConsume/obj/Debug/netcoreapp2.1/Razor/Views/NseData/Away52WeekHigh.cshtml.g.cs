@@ -63,7 +63,7 @@ using APIConsume.Models;
             WriteLiteral("\r\n<h1>Away52WeekHigh</h1>\r\n\r\n");
             EndContext();
             BeginContext(125, 46, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "897876e354184939933e2e07005983e8", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "54143fb4c08645f9a5708e4042268246", async() => {
                 BeginContext(147, 20, true);
                 WriteLiteral(" Back TO ALL Records");
                 EndContext();

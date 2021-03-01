@@ -47,6 +47,20 @@ namespace APIConsume.Controllers
                 var data = _nseDataServices.Rel_Momentum(scannerName);
                 return View(data);
             }
+            else if (scannerName == "None")
+            {
+                return View(_nseDataServices.Get());
+            }
+            else if (scannerName == "SortByDescending")
+            {
+
+                return View(_nseDataServices.Sort(scannerName));
+            }
+            else if (scannerName == "SortByAscending")
+            {
+
+                return View(_nseDataServices.SortA(scannerName).Take(3));
+            }
             else
             {
                 var data = _nseDataServices.Search(searchValue);

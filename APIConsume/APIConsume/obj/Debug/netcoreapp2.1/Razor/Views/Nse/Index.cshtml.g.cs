@@ -63,7 +63,7 @@ using APIConsume.Models;
             WriteLiteral("\r\n<h2>WatchList</h2>\r\n\r\n<p>\r\n    ");
             EndContext();
             BeginContext(119, 47, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "dad45f74e6b44c2fb83a7ba04e866f22", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "43bbdfc51a0c425ea740df33c2642e76", async() => {
                 BeginContext(142, 20, true);
                 WriteLiteral("Create New Watchlist");
                 EndContext();
