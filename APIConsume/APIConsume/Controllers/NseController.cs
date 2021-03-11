@@ -43,6 +43,11 @@ namespace APIConsume.Controllers
         // GET: Nse/Create
         public ActionResult Create()
         {
+            var list = new List<string> { "ZYDUSWELL", "Infosys", "Tata Motors", "GAIL", "Hundai", "Honda", "Cipla", "Piaggio", "3M India", "Eicher", "GM Motor",
+            "ONGC","HDFC","SBI","NTPC","Bharti Airtel","Idea","Wipro","ITC","Tata Steel","Ashok Leyland","Sun Pharma","Yes Bank","Tech Mahindra","Nerolac"};
+            ViewBag.list = list;
+
+            
             return View();
         }
 
@@ -92,8 +97,8 @@ namespace APIConsume.Controllers
             {
                 return View(nse);
             }
-           
-            
+
+
         }
 
         // GET: Nse/Delete/5

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Github\\FinTech-Flair-NSE-data\\APIConsume\\APIConsume\\APIConsume.csproj": {}
+    "D:\\Github\\APIConsume\\APIConsume\\APIConsume.csproj": {}
   },
   "projects": {
-    "D:\\Github\\FinTech-Flair-NSE-data\\APIConsume\\APIConsume\\APIConsume.csproj": {
+    "D:\\Github\\APIConsume\\APIConsume\\APIConsume.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Github\\FinTech-Flair-NSE-data\\APIConsume\\APIConsume\\APIConsume.csproj",
+        "projectUniqueName": "D:\\Github\\APIConsume\\APIConsume\\APIConsume.csproj",
         "projectName": "APIConsume",
-        "projectPath": "D:\\Github\\FinTech-Flair-NSE-data\\APIConsume\\APIConsume\\APIConsume.csproj",
+        "projectPath": "D:\\Github\\APIConsume\\APIConsume\\APIConsume.csproj",
         "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-        "outputPath": "D:\\Github\\FinTech-Flair-NSE-data\\APIConsume\\APIConsume\\obj\\",
+        "outputPath": "D:\\Github\\APIConsume\\APIConsume\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -102,6 +102,10 @@
             "MongoDB.Driver": {
               "target": "Package",
               "version": "[2.11.6, )"
+            },
+            "cloudscribe.Web.Pagination": {
+              "target": "Package",
+              "version": "[2.1.1, )"
             }
           },
           "imports": [

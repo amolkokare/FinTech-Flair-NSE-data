@@ -2,6 +2,35 @@
   "version": 3,
   "targets": {
     ".NETCoreApp,Version=v2.1": {
+      "cloudscribe.Pagination.Models/1.0.0": {
+        "type": "package",
+        "dependencies": {
+          "NETStandard.Library": "1.6.1",
+          "System.Linq.Queryable": "4.3.0"
+        },
+        "compile": {
+          "lib/netstandard1.6/cloudscribe.Pagination.Models.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.6/cloudscribe.Pagination.Models.dll": {}
+        }
+      },
+      "cloudscribe.Web.Pagination/2.1.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNetCore.Mvc": "2.0.0",
+          "Microsoft.AspNetCore.Mvc.Core": "2.0.0",
+          "Microsoft.AspNetCore.Mvc.TagHelpers": "2.0.0",
+          "System.Linq.Queryable": "4.3.0",
+          "cloudscribe.Pagination.Models": "1.0.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/cloudscribe.Web.Pagination.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/cloudscribe.Web.Pagination.dll": {}
+        }
+      },
       "DnsClient/1.3.1": {
         "type": "package",
         "dependencies": {
@@ -4798,6 +4827,30 @@
     }
   },
   "libraries": {
+    "cloudscribe.Pagination.Models/1.0.0": {
+      "sha512": "bjZhXcuIyFXKR/tnZ1BJQAq+IhxlqTQH2CE4KYs4UTjqxsM3t4i7rWxkOfhBU6nANAXmIs1Q/HU2GM0AtqyEPg==",
+      "type": "package",
+      "path": "cloudscribe.pagination.models/1.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "cloudscribe.pagination.models.1.0.0.nupkg.sha512",
+        "cloudscribe.pagination.models.nuspec",
+        "lib/netstandard1.6/cloudscribe.Pagination.Models.dll"
+      ]
+    },
+    "cloudscribe.Web.Pagination/2.1.1": {
+      "sha512": "jaWYXlR3OZQfbDC6BOWHOeo+SyHNUKXXQs6I3aPMd5M30fhfjFYGzo44hK70wSS1LXpOdUoj6X57IAlfi3y0fQ==",
+      "type": "package",
+      "path": "cloudscribe.web.pagination/2.1.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "cloudscribe.web.pagination.2.1.1.nupkg.sha512",
+        "cloudscribe.web.pagination.nuspec",
+        "lib/netstandard2.0/cloudscribe.Web.Pagination.dll"
+      ]
+    },
     "DnsClient/1.3.1": {
       "sha512": "b9XczgqSjs3dd+OlV799jn+LXxdfirln1q36GKjs3QwWBhjhgIvgHLEG5s2VrBLcP4ogQjtA0PZ5+AmRJ35Vhg==",
       "type": "package",
@@ -12966,7 +13019,8 @@
       "Microsoft.NETCore.App >= 2.1.0",
       "Microsoft.VisualStudio.Web.BrowserLink >= 2.1.1",
       "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 2.1.10",
-      "MongoDB.Driver >= 2.11.6"
+      "MongoDB.Driver >= 2.11.6",
+      "cloudscribe.Web.Pagination >= 2.1.1"
     ]
   },
   "packageFolders": {
@@ -12975,11 +13029,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Github\\FinTech-Flair-NSE-data\\APIConsume\\APIConsume\\APIConsume.csproj",
+      "projectUniqueName": "D:\\Github\\APIConsume\\APIConsume\\APIConsume.csproj",
       "projectName": "APIConsume",
-      "projectPath": "D:\\Github\\FinTech-Flair-NSE-data\\APIConsume\\APIConsume\\APIConsume.csproj",
+      "projectPath": "D:\\Github\\APIConsume\\APIConsume\\APIConsume.csproj",
       "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-      "outputPath": "D:\\Github\\FinTech-Flair-NSE-data\\APIConsume\\APIConsume\\obj\\",
+      "outputPath": "D:\\Github\\APIConsume\\APIConsume\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -13070,6 +13124,10 @@
           "MongoDB.Driver": {
             "target": "Package",
             "version": "[2.11.6, )"
+          },
+          "cloudscribe.Web.Pagination": {
+            "target": "Package",
+            "version": "[2.1.1, )"
           }
         },
         "imports": [

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
+using cloudscribe.Pagination.Models;
 
 namespace APIConsume.Models
 {
@@ -15,15 +16,9 @@ namespace APIConsume.Models
 
         public string SYMBOL { get; set; }
 
-        
-
         public DateTime TIMESTAMP { get; set; }
 
         public double CLOSE { get; set; }
-
-       
-
-        
 
         public double HIGH { get; set; }
 

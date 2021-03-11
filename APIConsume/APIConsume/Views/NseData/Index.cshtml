@@ -1,83 +1,73 @@
 ﻿@model IEnumerable<APIConsume.Models.SMAT>
 
+
 @{
     ViewData["Title"] = "Index";
 }
 
-<h2>Index</h2>
+
 
 <form asp-action="Index" method="post">
+    <script src="https://kit.fontawesome.com/612893f2a3.js" crossorigin="anonymous"></script>
     <div>
         <p>
 
-            Search SYMBOL: <input type="text" name="searchValue" value="" />
-            <input type="Submit" value="Search" />
-            @*Search Scanner: <input type="text" name="scannerName" value="" />
-            <input type="Submit" value="Search" /><br />*@
-            <select name="scannerName">
-                <option>None</option>
-                <option>HighWeek</option>
-                <option>LowWeek</option>
-                <option>Momentum</option>
-                <option>SortByDescending</option>
-                <option>SortByAscending</option>
+            <hr> <header style="color:darkgreen">Search SYMBOL : </header>  
+            <input type="text" name="searchValue" value="" style="border-color:black" />
+            <input type="Submit" value="Search" style="color:#000000" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+            <select class="form-control-static" id="scannerName" name="scannerName" style="border-color:black">
+                <option value="">SELECT SCANNERS</option>
+                <option value="1">52WeekHigh</option>
+                <option value="2">52WeekLow</option>
+                <option value="3">Momentum</option>
+                <option value="4">Top Gainers</option>
+                <option value="5">Top Loosers</option>
             </select>&nbsp;&nbsp;&nbsp;&nbsp;
-            <input type="Submit" value="Search" /><br />
-            
-            <a asp-action="Index"> Clear Filter</a>
+            <input type="Submit" value="Search" style="color:#000000" />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <select class="form-control-static" id="watchlist" name="watchlist" style="border-color:black">
+                <option value="">SELECT Watchlist</option>
+                <option value="2">IT</option>
+                <option value="3">Pharma</option>
+                <option value="4">MiniMarket</option>
+            </select>&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="Submit" value="Search" style="color:#000000" /><br />
+            <hr />
+
+            <a asp-action="Index" style="color:red"> Clear Filter</a>
+
 
         </p>
     </div>
 </form>
 
 
-@*<form asp-action="Away52WeekHigh" method="post">
-    <div>
-        <p>
-            <input type="submit" name="scannerName" value="Away52WeekHigh" />
-        </p>
-    </div>
-</form>*@
-
-@*<form asp-action="Away52WeekLow" method="post">
-    <div>
-        <p>
-            <input type="submit" name="scannerName" value="Away52WeekLow" />
-        </p>
-    </div>
-</form>
-
-<form asp-action="Momentum" method="post">
-    <div>
-        <p>
-            <input type="submit" name="scannerName" value="Momentum" />
-        </p>
-    </div>
-</form>*@
 
 
-<table class="table">
+
+<table class="table" border="0" style="background-color:#ffffff">
     <thead>
         <tr>
             @*<th>
                 @Html.DisplayNameFor(model => model.Id)
             </th>*@
-            <th>
+            <th style="color:black">
                 @Html.DisplayNameFor(model => model.SYMBOL)
             </th>
-            <th>
+            <th style="color:black">
                 @Html.DisplayNameFor(model => model.TIMESTAMP)
             </th>
-            <th>
+            <th style="color:black">
                 @Html.DisplayNameFor(model => model.CLOSE)
             </th>
-            <th>
+            <th style="color:black">
                 @Html.DisplayNameFor(model => model.HIGH)
             </th>
-            <th>
+            <th style="color:black">
                 @Html.DisplayNameFor(model => model.LOW)
-            </th>
-            <th>
+            </th >
+            <th style="color:black">
                 @Html.DisplayNameFor(model => model.Volume)
             </th>
             @*<th>
@@ -98,13 +88,13 @@
             <th>
                 @Html.DisplayNameFor(model => model.sma200)
             </th>*@
-            <th>
+            <th style="color:black">
                 @Html.DisplayNameFor(model => model.Percent_of_Price_Change5_days)
             </th>
             @*<th>
                 @Html.DisplayNameFor(model => model.Volume_changein_20Days)
             </th>*@
-            <th>
+            <th style="color:black">
                 @Html.DisplayNameFor(model => model.Relative_Volume)
             </th>
             @*<th>
@@ -113,10 +103,10 @@
             <th>
                 @Html.DisplayNameFor(model => model.WeekLow52)
             </th>*@
-            <th>
+            <th style="color:black">
                 @Html.DisplayNameFor(model => model.Away_From_52WeekHigh)
             </th>
-            <th>
+            <th style="color:black">
                 @Html.DisplayNameFor(model => model.Away_From_52WeekLow)
             </th>
             <th></th>
@@ -126,71 +116,83 @@
 @foreach (var item in Model) {
         <tr>
             @*<td>
-                @Html.DisplayFor(modelItem => item.Id)
-            </td>*@
-            <td>
+            @Html.DisplayFor(modelItem => item.Id)
+        </td>*@
+            <td style="color:black">
                 @Html.DisplayFor(modelItem => item.SYMBOL)
             </td>
-            <td>
+            <td style="color:black">
                 @Html.DisplayFor(modelItem => item.TIMESTAMP)
             </td>
-            <td>
+            <td style="color:black">
                 @Html.DisplayFor(modelItem => item.CLOSE)
             </td>
-            <td>
+            <td style="color:black">
                 @Html.DisplayFor(modelItem => item.HIGH)
             </td>
-            <td>
+            <td style="color:black">
                 @Html.DisplayFor(modelItem => item.LOW)
             </td>
-            <td>
+            <td style="color:black">
                 @Html.DisplayFor(modelItem => item.Volume)
             </td>
             @*<td>
-                @Html.DisplayFor(modelItem => item.sma05)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.sma10)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.sma15)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.sma20)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.sma50)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.sma200)
-            </td>*@
-            <td>
+            @Html.DisplayFor(modelItem => item.sma05)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.sma10)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.sma15)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.sma20)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.sma50)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.sma200)
+        </td>*@
+            <td style="color:black">
                 @Html.DisplayFor(modelItem => item.Percent_of_Price_Change5_days)
             </td>
             @*<td>
-                @Html.DisplayFor(modelItem => item.Volume_changein_20Days)
-            </td>*@
-            <td>
+            @Html.DisplayFor(modelItem => item.Volume_changein_20Days)
+        </td>*@
+            <td style="color:black">
                 @Html.DisplayFor(modelItem => item.Relative_Volume)
             </td>
             @*<td>
-                @Html.DisplayFor(modelItem => item.WeekHigh52)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.WeekLow52)
-            </td>*@
-            <td>
+            @Html.DisplayFor(modelItem => item.WeekHigh52)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.WeekLow52)
+        </td>*@
+            <td style="color:black">
                 @Html.DisplayFor(modelItem => item.Away_From_52WeekHigh)
             </td>
-            <td>
+            <td style="color:black">
                 @Html.DisplayFor(modelItem => item.Away_From_52WeekLow)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+                <a class="btn btn-primary" title="Details" asp-action="Details" asp-route-Id="@item.Id"><i class="fas fa-info-circle"></i> </a>
+                <a class="btn btn-danger" title="Delete" asp-action="Delete" asp-route-Id="@item.Id"><i class="fas fa-trash-alt"></i> </a>
             </td>
+            
         </tr>
 }
     </tbody>
 </table>
+<hr>
+<cs-pager cs-paging-pagenumber="0"
+          cs-paging-totalitems="9"
+          cs-paging-pagesize="1"
+          cs-pagenumber-param="PageNumber"
+          asp-controller="NseData"
+          asp-action="Index"
+          ></cs-pager><hr />
+<hr >
+<form asp-action="Index" method="post" >
+    <button name="button" value="first" style="color:black">Show all Record</button>
+</form><hr/>

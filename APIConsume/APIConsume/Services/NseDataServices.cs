@@ -10,13 +10,15 @@ namespace APIConsume.Services
     public class NseDataServices
     {
         private readonly IMongoCollection<SMAT> _sma;
-       
+        private readonly IMongoCollection<Nse> _nse;
         public NseDataServices(INseDatabaseSetting settings)
         {
             var client = new MongoClient(settings.ConnectionString);
             var database = client.GetDatabase(settings.DatabaseName);
 
             _sma = database.GetCollection<SMAT>(settings.SMACollectionName);
+
+            
         }
 
 
@@ -29,19 +31,46 @@ namespace APIConsume.Services
         }
 
         // It gives symbol that we want to search
-        public List<SMAT> Search(string SearchSYMBOL)
+        public List<SMAT> Search (string SearchSYMBOL)
         {
-           return _sma.Find(SMAT => SMAT.SYMBOL == SearchSYMBOL).ToList();
+            DateTime maxDate = getMaxDate();
+            List<SMAT> slist = new List<SMAT>();
+
+
+            var cd = Get().ToList();
+            string g = maxDate.ToString();
+            var f = g.Split(" ");
+            foreach (var item in cd)
+            {
+
+                
+                var symbol = item.SYMBOL;
+                string times = item.TIMESTAMP.ToString();
+
+
+                if (symbol==SearchSYMBOL && times.Contains(f[0]))
+                {
+                    slist.Add(item);
+                }
+
+            }
+
+            return slist;
+
+
         }
 
 
         // It gives Descending order of Percentage change
         public List<SMAT> sort(string sc)
         {
+            
             var cd = Get();
-            var vs = cd.OrderByDescending(d => d.Percent_of_Price_Change5_days).ToList();
+            var vs = cd.OrderByDescending(d => d.Percent_of_Price_Change5_days).TakeWhile(d => d.Percent_of_Price_Change5_days > 0).ToList();// Top gainers only show positive value records
             return vs;
         }
+
+        
 
         // It gives Descending order of Percentage change
         public List<SMAT> Sort(string scannerName)
@@ -76,9 +105,12 @@ namespace APIConsume.Services
         public List<SMAT> sortA(string sc)
         {
             var cd = Get();
-            var vs = cd.OrderBy(d => d.Percent_of_Price_Change5_days).ToList();
+            
+            var vs = cd.OrderBy(d => d.Percent_of_Price_Change5_days).TakeWhile(d=>d.Percent_of_Price_Change5_days<0).ToList(); // Top loosers only show negative value records
+
             return vs;
         }
+       
 
         // It gives Ascending order of Percentage change
         public List<SMAT> SortA(string scannerName)
@@ -99,7 +131,7 @@ namespace APIConsume.Services
                 string times = item.TIMESTAMP.ToString();
 
 
-                if (times.Contains(f[0]) && SortAsc != null && Vol >= 1642481 && close > 1000)
+                if (SortAsc!=null && times.Contains(f[0])  && Vol >= 1642481)
                 {
                     slist.Add(item);
                 }
@@ -209,6 +241,13 @@ namespace APIConsume.Services
             }
 
             return slist;
+        }
+
+        //watchlist part
+        public List<Nse> IT(string watchlist)
+        {
+            return _nse.Find(Nse => true).ToList();
+
         }
 
     }

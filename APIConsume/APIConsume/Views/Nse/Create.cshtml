@@ -8,8 +8,7 @@
 
 <h4>Nse</h4>
 <form asp-action="Index" method="post">
-    
-    </form>
+</form>
 
 <hr />
 <div class="row">
@@ -22,44 +21,52 @@
                 <input asp-for="Watchlist_name" class="form-control" />
                 <span asp-validation-for="Watchlist_name" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="Search_Symbol" class="control-label"></label>
-                <input asp-for="Search_Symbol" class="form-control" />
-                <span asp-validation-for="Search_Symbol" class="text-danger"></span><br />
-                <input type="Submit" value="Search" />
-            </div>
-                <div class="form-group">
-                    <label asp-for="Symbol" class="control-label"></label>
-                    <input asp-for="Symbol" class="form-control" />
-                    <span asp-validation-for="Symbol" class="text-danger"></span>
-                </div>
-            <label asp-for="CreatedDate">
-                @Html.TextBoxFor(x => x.Date, new { @id = "Date", @type = "date",
-           @value = DateTime.Now.ToShortDateString() })</label><br />
+            <div class="from-group">
+                @Html.LabelFor(model => model.Search_Symbol, htmlAttributes: new { @class = "control-label " })
+                <div class="col-md-10">
+                    @Html.DropDownListFor(model => model.Search_Symbol, new SelectList(ViewBag.list), "Select your symbol")
 
-                @*<div class="form-group">
-                <label asp-for="CreatedDate" class="control-label"></label>
-                <input asp-for="CreatedDate" class="form-control" />
-                <span asp-validation-for="CreatedDate" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="ModifiedDate" class="control-label"></label>
-                <input asp-for="ModifiedDate" class="form-control" />
-                <span asp-validation-for="ModifiedDate" class="text-danger"></span>
-            </div>*@
-                @*<div class="form-group">
-                <label asp-for="CreatedDate" class="control-label"></label>
-                <input asp-for="CreatedDate" class="form-control" />
-                <span asp-validation-for="CreatedDate" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="ModifiedDate" class="control-label"></label>
-                <input asp-for="ModifiedDate" class="form-control" />
-                <span asp-validation-for="ModifiedDate" class="text-danger"></span>
-            </div>*@
-                <div class="form-group">
-                    <input type="submit" value="Create" class="btn btn-default" />
+                    @*@Html.DropDownListFor(M => M.Search_Symbol, new SelectList(Model.Search_Symbol, "Value", "Text"))*@
+                    @Html.ValidationMessageFor(model => model.Search_Symbol, "", new { @class = "text-danger" })
                 </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="Symbol" class="control-label"></label>
+                <input asp-for="Symbol" class="form-control" />
+                <span asp-validation-for="Symbol" class="text-danger"></span>
+            </div>
+            <label asp-for="CreatedDate">
+                @Html.TextBoxFor(x => x.Date, new
+                {
+                    @id = "Date",
+                    @type = "date",
+           @value = DateTime.Now.ToShortDateString()
+                })
+            </label><br />
+
+            @*<div class="form-group">
+                    <label asp-for="CreatedDate" class="control-label"></label>
+                    <input asp-for="CreatedDate" class="form-control" />
+                    <span asp-validation-for="CreatedDate" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="ModifiedDate" class="control-label"></label>
+                    <input asp-for="ModifiedDate" class="form-control" />
+                    <span asp-validation-for="ModifiedDate" class="text-danger"></span>
+                </div>*@
+            @*<div class="form-group">
+                    <label asp-for="CreatedDate" class="control-label"></label>
+                    <input asp-for="CreatedDate" class="form-control" />
+                    <span asp-validation-for="CreatedDate" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="ModifiedDate" class="control-label"></label>
+                    <input asp-for="ModifiedDate" class="form-control" />
+                    <span asp-validation-for="ModifiedDate" class="text-danger"></span>
+                </div>*@
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
         </form>
     </div>
 </div>
