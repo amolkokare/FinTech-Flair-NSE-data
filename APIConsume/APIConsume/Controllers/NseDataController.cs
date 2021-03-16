@@ -5,6 +5,7 @@ using APIConsume.Models;
 using APIConsume.Services;
 using cloudscribe.Pagination.Models;
 using Microsoft.EntityFrameworkCore;
+using APIConsume.Controllers;
 
 namespace APIConsume.Controllers
 {
@@ -12,22 +13,26 @@ namespace APIConsume.Controllers
     public class NseDataController : Controller
     {
         
-        private readonly NseDataServices _nseDataServices;
+        public readonly NseDataServices _nseDataServices;
+        public readonly NseService _nseService;
         public NseDataController(NseDataServices nseDataServices)
         {
             _nseDataServices = nseDataServices;
         }
+        
+
 
         // It gives whole data
         public ActionResult Index2()
         {
-             return View(_nseDataServices.Get());
+             return View(_nseDataServices.GetNseData());
         }
+       
 
-        
+
         public ActionResult Index(int PageNumber=1, int PageSize=6)
         {
-            var alldata = _nseDataServices.Get().ToList();
+            var alldata = _nseDataServices.GetNseData().ToList();
             int Exclude = (PageNumber * PageSize) - PageSize;
             var output = alldata
                 .Skip(Exclude)
@@ -37,6 +42,20 @@ namespace APIConsume.Controllers
             return View(output);
             }
 
+        public ActionResult Details(string id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var nsedata = _nseDataServices.Get(id);
+            if (nsedata == null)
+            {
+                return NotFound();
+            }
+            return View(nsedata);
+        }
 
         // It gives symbol that we want to search
         [HttpPost]
@@ -61,59 +80,29 @@ namespace APIConsume.Controllers
             }
             else if (scannerName == "")
             {
-                return View(_nseDataServices.Get());
+                return View(_nseDataServices.GetNseData());
             }
             else if (scannerName == "4")
             {
 
-                return View(_nseDataServices.sort(scannerName).Take(10));
+                return View(_nseDataServices.Sort(scannerName));
             }
             else if (scannerName == "5")
             {
                 
-                return View(_nseDataServices.sortA(scannerName).Take(2));
+                return View(_nseDataServices.SortA(scannerName));
             }
             else if(button=="first")
             {
                 return View(_nseDataServices.sort(scannerName));
             }
+            
             else
             {
                 var data = _nseDataServices.Search(searchValue);
                 return View(data);
             }
         }
-
-        
-        
-
-            // It gives Max date with Away_52weekhigh,geater close and max Volume
-            //[HttpPost]
-            //public ActionResult Away52WeekHigh(string scannerName)
-            //{
-
-            //    var data = _nseDataServices.searchaway52weekhigh(scannerName);
-            //    return View(data);
-
-            //}
-
-            // It gives Max date with Away_52weeklow,geater close and max Volume
-            //[HttpPost]
-            //public ActionResult Away52WeekLow(string scannerName)
-            //{
-            //    var data = _nseDataServices.searchaway52weeklow(scannerName);
-            //    return View(data);
-
-            //}
-
-            // It gives Max date with Relative_Volume,geater close and max Volume
-            //[HttpPost]
-            //public ActionResult Momentum(string scannerName)
-            //{
-            //    var data = _nseDataServices.Rel_Momentum(scannerName);
-            //    return View(data);
-
-            //}
 
 
         }

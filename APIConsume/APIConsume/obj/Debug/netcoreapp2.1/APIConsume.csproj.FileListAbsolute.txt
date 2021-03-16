@@ -124,3 +124,4 @@ D:\Github\APIConsume\APIConsume\obj\Debug\netcoreapp2.1\APIConsume.dll
 D:\Github\APIConsume\APIConsume\obj\Debug\netcoreapp2.1\APIConsume.pdb
 D:\Github\APIConsume\APIConsume\obj\Debug\netcoreapp2.1\APIConsume.genruntimeconfig.cache
 D:\Github\APIConsume\APIConsume\obj\Debug\netcoreapp2.1\APIConsume.csproj.CopyComplete
+D:\Github\APIConsume\APIConsume\obj\Debug\netcoreapp2.1\Razor\Views\NseData\Details.cshtml.g.cs

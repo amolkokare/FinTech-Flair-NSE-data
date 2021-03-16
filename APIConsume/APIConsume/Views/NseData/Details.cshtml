@@ -1,0 +1,138 @@
+﻿@model APIConsume.Models.SMAT
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>SMAT</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Id)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Id)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.SYMBOL)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.SYMBOL)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.TIMESTAMP)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.TIMESTAMP)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.CLOSE)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.CLOSE)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.HIGH)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.HIGH)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.LOW)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.LOW)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Volume)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Volume)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.sma05)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.sma05)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.sma10)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.sma10)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.sma15)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.sma15)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.sma20)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.sma20)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.sma50)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.sma50)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.sma200)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.sma200)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Percent_of_Price_Change5_days)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Percent_of_Price_Change5_days)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Volume_changein_20Days)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Volume_changein_20Days)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Relative_Volume)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Relative_Volume)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.WeekHigh52)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.WeekHigh52)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.WeekLow52)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.WeekLow52)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Away_From_52WeekHigh)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Away_From_52WeekHigh)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Away_From_52WeekLow)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Away_From_52WeekLow)
+        </dd>
+    </dl>
+</div>
+<div>
+    
+    <a asp-action="Index">Back to List</a>
+</div>

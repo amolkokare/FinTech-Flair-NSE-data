@@ -1,4 +1,5 @@
-﻿@model IEnumerable<APIConsume.Models.SMAT>
+﻿
+@model IEnumerable<APIConsume.Models.SMAT>
 
 
 @{
@@ -12,27 +13,31 @@
     <div>
         <p>
 
-            <hr> <header style="color:darkgreen">Search SYMBOL : </header>  
+            <hr> <label style="color:darkgreen">Search SYMBOL : </label>
             <input type="text" name="searchValue" value="" style="border-color:black" />
             <input type="Submit" value="Search" style="color:#000000" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
-            <select class="form-control-static" id="scannerName" name="scannerName" style="border-color:black">
+            <select class="form-control-static" id="scannerName" name="scannerName" style="border-color:black" >
                 <option value="">SELECT SCANNERS</option>
                 <option value="1">52WeekHigh</option>
                 <option value="2">52WeekLow</option>
                 <option value="3">Momentum</option>
                 <option value="4">Top Gainers</option>
                 <option value="5">Top Loosers</option>
-            </select>&nbsp;&nbsp;&nbsp;&nbsp;
+            </select>
             <input type="Submit" value="Search" style="color:#000000" />
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+           
+            
+
             <select class="form-control-static" id="watchlist" name="watchlist" style="border-color:black">
                 <option value="">SELECT Watchlist</option>
-                <option value="2">IT</option>
-                <option value="3">Pharma</option>
-                <option value="4">MiniMarket</option>
-            </select>&nbsp;&nbsp;&nbsp;&nbsp;
-            <input type="Submit" value="Search" style="color:#000000" /><br />
+                <option value="">IT</option>
+                <option value="">Pharma</option>
+                <option value="">MiniMarket</option>
+
+            </select>
+            <input type="Submit" value="Search" style="color:#000000" />
             <hr />
 
             <a asp-action="Index" style="color:red"> Clear Filter</a>
@@ -177,7 +182,7 @@
             </td>
             <td>
                 <a class="btn btn-primary" title="Details" asp-action="Details" asp-route-Id="@item.Id"><i class="fas fa-info-circle"></i> </a>
-                <a class="btn btn-danger" title="Delete" asp-action="Delete" asp-route-Id="@item.Id"><i class="fas fa-trash-alt"></i> </a>
+               
             </td>
             
         </tr>
@@ -185,6 +190,8 @@
     </tbody>
 </table>
 <hr>
+
+
 <cs-pager cs-paging-pagenumber="0"
           cs-paging-totalitems="9"
           cs-paging-pagesize="1"
