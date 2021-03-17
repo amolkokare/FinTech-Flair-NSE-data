@@ -1,9 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "oyu42J4vvAkUMJlyr81lBwyFp4BveJZdXpBT8udF/jOwPuObjLBkFhCIkzZjyKk4r4nesNKsXBgEGPgv9DYjUg==",
+  "dgSpecHash": "gNWa8p67M35g0ROpKYKHkSjsJG3Oqid+stUI9nE26+Jpm+bju5ohxhrMVhaQDhJmziJmLfSZAXGzMUowEAdEWA==",
   "success": true,
-  "projectFilePath": "D:\\Github\\FinTech-Flair-NSE-data\\APIConsume\\APIConsume\\APIConsume.csproj",
+  "projectFilePath": "D:\\Github\\APIConsume\\APIConsume\\APIConsume.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\user\\.nuget\\packages\\cloudscribe.pagination.models\\1.0.0\\cloudscribe.pagination.models.1.0.0.nupkg.sha512",
+    "C:\\Users\\user\\.nuget\\packages\\cloudscribe.web.pagination\\2.1.1\\cloudscribe.web.pagination.2.1.1.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\dnsclient\\1.3.1\\dnsclient.1.3.1.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\korzh.easyquery\\5.4.7\\korzh.easyquery.5.4.7.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\korzh.easyquery.db\\5.4.7\\korzh.easyquery.db.5.4.7.nupkg.sha512",

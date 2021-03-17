@@ -12,17 +12,26 @@ namespace APIConsume.Controllers
     public class NseController : Controller
     {
 
-        private readonly NseService nseService;
+        public readonly NseService _nseService;
         private readonly NseDataServices _nseDataServices;
         public NseController(NseService nseService)
         {
-            this.nseService = nseService;
+            _nseService = nseService;
         }
         // GET: Nse
+        //public ActionResult Index()
+        //{
+        //    return View(_nseService.Get());
+
+        //}
         public ActionResult Index()
         {
-            return View(nseService.Get());
+            
+            return View(_nseService.Get());
+
         }
+        
+
 
         // GET: Nse/Details/5
         public ActionResult Details(string id)
@@ -32,7 +41,7 @@ namespace APIConsume.Controllers
                 return NotFound();
             }
 
-            var nse = nseService.Get(id);
+            var nse = _nseService.Get(id);
             if (nse == null)
             {
                 return NotFound();
@@ -43,8 +52,20 @@ namespace APIConsume.Controllers
         // GET: Nse/Create
         public ActionResult Create()
         {
+
+            var sa = _nseService.GetNseData();
+
+            var list = new List<string>();
+            foreach (var item in sa)
+            {
+                list.Add(item.SYMBOL);
+            }
+            ViewBag.list = list;
+
+
             return View();
         }
+
 
         // POST: Nse/Create
         [HttpPost]
@@ -53,7 +74,7 @@ namespace APIConsume.Controllers
         {
             if (ModelState.IsValid)
             {
-                nseService.Create(nse);
+                _nseService.Create(nse);
                 return RedirectToAction(nameof(Index));
             }
             return View(nse);
@@ -66,7 +87,7 @@ namespace APIConsume.Controllers
             {
                 return NotFound();
             }
-            var nse = nseService.Get(id);
+            var nse = _nseService.Get(id);
             if (nse == null)
             {
                 return NotFound();
@@ -85,15 +106,15 @@ namespace APIConsume.Controllers
             }
             if (ModelState.IsValid)
             {
-                nseService.Update(id, nse);
+                _nseService.Update(id, nse);
                 return RedirectToAction(nameof(Index));
             }
             else
             {
                 return View(nse);
             }
-           
-            
+
+
         }
 
         // GET: Nse/Delete/5
@@ -104,7 +125,7 @@ namespace APIConsume.Controllers
                 return NotFound();
             }
 
-            var nse = nseService.Get(id);
+            var nse = _nseService.Get(id);
             if (nse == null)
             {
                 return NotFound();
@@ -119,12 +140,12 @@ namespace APIConsume.Controllers
         {
             try
             {
-                var nse = nseService.Get(id);
+                var nse = _nseService.Get(id);
                 if (nse == null)
                 {
                     return NotFound();
                 }
-                nseService.Remove(nse.Id);
+                _nseService.Remove(nse.Id);
 
 
                 // TODO: Add delete logic here
@@ -138,11 +159,13 @@ namespace APIConsume.Controllers
 
         }
 
-        /*[HttpPost]
-        public ActionResult Index(string searchValue)
+        [HttpPost]
+        public ActionResult Index(string watchlist)
         {
-            var data = _nseDataServices.Search(searchValue);
-            return View(_nseDataServices.Search(searchValue));
-        }*/
+            var data = _nseService.SearchW(watchlist);
+            return View(data);
+        }
+
+       
     }
 }

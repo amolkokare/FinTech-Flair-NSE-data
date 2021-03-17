@@ -13,6 +13,7 @@ namespace APIConsume.Services
     
     public class NseService
     {
+        public readonly IMongoCollection<SMAT> _nse1;
         private readonly IMongoCollection<Nse> _nse;
         private readonly IMongoCollection<SMAT> _sma;
         public NseService(IConfiguration config)
@@ -20,11 +21,16 @@ namespace APIConsume.Services
             MongoClient client = new MongoClient(config.GetConnectionString("Watchlist"));
             IMongoDatabase database = client.GetDatabase("Watchlist");
             _nse = database.GetCollection<Nse>("sma");
+            _nse1 = database.GetCollection<SMAT>("nse");
         }
 
         public List<Nse> Get()
         {
             return _nse.Find(SMAT => true).ToList();
+        }
+        public List<SMAT> GetNseData()
+        {
+            return _nse1.Find(SMAT => true).ToList();
         }
 
         public Nse Get(string id)
@@ -53,10 +59,10 @@ namespace APIConsume.Services
             _nse.DeleteOne(ne => ne.Id == id);
         }
 
-        /*public List<SMAT> SearchSymbol(string SearchSYMBOL)
+        public List<Nse> SearchW(string watchlist)
         {
-            return _sma.Find(SMAT => SMAT.SYMBOL == SearchSYMBOL).ToList();
-        }*/
+            return _nse.Find(n => n.Watchlist_name==watchlist).ToList();
+        }
     }
 }
 

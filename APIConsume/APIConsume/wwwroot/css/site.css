@@ -35,3 +35,16 @@ body {
         display: none;
     }
 }
+/*green navbar*/
+.navbar-inverse {
+    background-color: #b6ff00 !important;
+}
+
+a.mynav {
+    background-color: #39870C !important;
+}
+
+.navbar-inverse .navbar-brand, .navbar-inverse .navbar-nav > li > a {
+    color: #ffffff;
+}
+/* end of green navbar*/ 
